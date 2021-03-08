@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Laboratorio 3</title>
+</head>
+<body>
+  <section class="form-register">
+    <h4>Registro Estudiante</h4>
+    <input class="controls" type="text" name="surname" id="surname" placeholder="Ingrese su Nombre">
+    <input class="controls" type="text" name="lastname" id="lastname" placeholder="Ingrese su Apellido">
+    <input class="controls" type="text" name="phone" id="phone" placeholder="Ingrese su número de celular">
+    <input class="botons" type="submit" value="Agregar" onclick="addStudent()">
+  </section>
+
+    <div class="divTable" id="app-2">
+        <table>
+          <thead>
+              <tr>
+                  <th>Apellidos</th><th>Nombre</th><th>N° Teléfono</th>
+              </tr>
+          </thead>
+          <tr class="list-group-item" v-for="server in servers">
+            <td>{{ server.lastname }}</td><td>{{ server.surname }}</td><td>{{ server.phone }}</td>
+          </tr>
+        </table>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
